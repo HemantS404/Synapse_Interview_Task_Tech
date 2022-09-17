@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <th>Name Of the Event</th>
+        <th>Date and Time</th>
+        <th>Status of Completion</th>
+        <th>Number of Audience</th>
+        <th>Email</th>
+    </tr>
+    {% for i in data %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.date_of_event}}</td>
+            <td>{{i.event_complete}}</td>
+            <td>{{i.No_of_audience}}</td>
+            <td>{{i.Email_of_organizer}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

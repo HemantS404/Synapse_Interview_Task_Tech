@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+<body>
+    <form action="{% url 'create' %}" method="get">
+        <h3>Name of the event : <input type="text" name="name" id="name"></h3>
+        <h3>Date : <input type="date" name="date" id="date"></h3>
+        <h3>Time : <input type="time" name="time" id="time"></h3>
+        <h3>Number of Audience : <input type="number" name="audience" id="audience"></h3>
+        <h3>Email of Organizer: <input type="email" name="email" id="email"></h3>
+        <br>
+        <input type="submit" value="Sumbit">
+    </form>
+</body>
+</html>

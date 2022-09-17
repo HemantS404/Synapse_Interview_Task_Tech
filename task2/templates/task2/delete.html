@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+    <form action="{% url 'delete' %}">
+        <label for="row"><h1>Choose which row to delete : </h1></label>
+        <select name="row" id="row">
+            <option value=''>Select a Row</option>
+            {% for i in data %}
+            <option value = {{i.id}} > 
+                {{i.name}} -||-
+                {{i.date_of_event}} -||-
+                {{i.event_complete}} -||-
+                {{i.No_of_audience}} -||-
+                {{i.Email_of_organizer}}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form action="{% url 'update' %}">
+        <label for="row"><h1>Choose which row to Update : </h1></label>
+        <select name="row" id="row">
+            <option value=''>Select a Row</option>
+            {% for i in data %}
+            <option value = {{i.id}} > 
+                {{i.name}} -||-
+                {{i.date_of_event}} -||-
+                {{i.event_complete}} -||-
+                {{i.No_of_audience}} -||-
+                {{i.Email_of_organizer}}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <h4>---------------- Enter the field which you want to update ----------------</h4>
+        <h5>-------------------------- (leave the field blank for no alterations) --------------------------</h5>
+        <h3>Name of the event : <input type="text" name="name" id="name"></h3>
+        <h3>Date : <input type="date" name="date" id="date"></h3>
+        <h3>Time : <input type="time" name="time" id="time"></h3>
+        <h3>Number of Audience : <input type="number" name="audience" id="audience"></h3>
+        <h3>Email of Organizer: <input type="email" name="email" id="email"></h3>
+        <h3>Event complete:
+        <input type="checkbox" name="status" value="True"> Yes
+        </h3><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
